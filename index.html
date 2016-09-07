@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mars Rover App</title>
+    <meta name="author" content="Zach Townsend - email: idealconceptz@gmail.com">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  
+  <body>
+      <p>This project produces no visible output. To extend this we could turn it into a RESTful API with a front-end to allow a user to send the commands manually.</p>
+      <p>To run, type 'npm start' and visit http://localhost:8000/ in your browser.</p>
+      <p>To run the tests, type 'npm test'.</p>
+
+      <script src="js/app.js"></script>
+      <script>
+
+        //  The following commands instatiate a grid, two rovers, and move the main rover.
+        //  Please see the unit tests for the full range of movements
+        //  This code in the index file is not for production but is simply to illustrate typical useage.
+
+        var grid = app.Grid(10,10);
+        var myRover = app.Rover(grid, { x: 5, y: 5, direction: 90, id: 1 });
+        console.log('Starting position:');
+        myRover.logStatus();
+        var obstacle = app.Rover(grid, { x: 2, y: 1, direction: 0, id: 2 });
+        console.log('Another rover at position:');
+        obstacle.logStatus();
+        console.log('Sending commands: UUURDDDLLU');
+        console.log('Final position:')
+        myRover.sendCommands('UUURDDDLLU');
+
+    </script>
+ </body>
+</html>

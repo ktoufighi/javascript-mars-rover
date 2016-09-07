@@ -1,0 +1,25 @@
+{
+  "name": "javascript-mars-rover",
+  "private": false,
+  "version": "0.0.1",
+  "description": "Control a Mars Rover",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1 ./",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update"
+  },
+  "dependencies": {
+  }
+}
